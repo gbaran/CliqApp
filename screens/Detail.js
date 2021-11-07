@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import {COLORS, SIZES, FONTS} from '../constants';
 import {ScrollView} from 'react-native-gesture-handler';
+import { productScreen } from '../e2e/locators/productScreen';
 
 const Product = ({route, navigation}) => {
   var {id, name, img, type, price} = route.params;
@@ -14,10 +15,10 @@ const Product = ({route, navigation}) => {
   }
 
   return (
-    <View style={{height: '100%', width: '100%', backgroundColor: '#fafafa'}}>
+    <View style={{height: '100%', width: '100%', backgroundColor: '#fafafa'}} testID={productScreen.productContainer}>
       <ScrollView>
         <View style={{height: 500, padding: 2}}>
-          <Image
+          <Image testID={productScreen.productImage}
             source={{uri: img}}
             resizeMode="contain"
             style={{
@@ -47,10 +48,10 @@ const Product = ({route, navigation}) => {
             margin: 10,
           }}>
           <View style={{flex: 1, alignItems: 'flex-start'}}>
-            <Text style={{...FONTS.product_title_text}}>{name}</Text>
+            <Text style={{...FONTS.product_title_text}} testID={productScreen.productName}>{name}</Text>
           </View>
           <View style={{flex: 1, alignItems: 'flex-end'}}>
-            <Text style={{...FONTS.product_title_text}}>₹{price}</Text>
+            <Text style={{...FONTS.product_title_text}} testID={productScreen.productPrice}>₹{price}</Text>
           </View>
         </View>
         <View
@@ -61,12 +62,12 @@ const Product = ({route, navigation}) => {
             margin: 10,
           }}>
           <View style={{flex: 1, alignItems: 'flex-start'}}>
-            <Text style={{...FONTS.product_sub_title_text}}>
+            <Text style={{...FONTS.product_sub_title_text}} testID={productScreen.productDescription}>
               short description
             </Text>
           </View>
           <View style={{flex: 1, alignItems: 'flex-end'}}>
-            <Text style={{...FONTS.product_sub_title_text}}>(40%)</Text>
+            <Text style={{...FONTS.product_sub_title_text}} testID={productScreen.productDiscount}>(40%)</Text>
           </View>
         </View>
       </ScrollView>
@@ -101,7 +102,7 @@ const Product = ({route, navigation}) => {
                 price: price,
               });
             }}>
-            <Text style={{color: COLORS.black, ...FONTS.big_button_text}}>
+            <Text style={{color: COLORS.black, ...FONTS.big_button_text}} testID={productScreen.addToBagButton}>
               ADD TO BAG
             </Text>
           </TouchableOpacity>
@@ -124,7 +125,7 @@ const Product = ({route, navigation}) => {
                 price: price,
               });
             }}>
-            <Text style={{color: COLORS.white, ...FONTS.big_button_text}}>
+            <Text style={{color: COLORS.white, ...FONTS.big_button_text}} testID={productScreen.buyNowButton}>
               BUY NOW
             </Text>
           </TouchableOpacity>

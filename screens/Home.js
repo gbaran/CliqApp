@@ -192,7 +192,7 @@ const Home = () => {
                         }}
                     />
                 </View>
-                <View style={{ flex: 3, marginLeft: SIZES.radius, justifyContent: 'center' }}>
+                <View style={{ flex: 3, marginLeft: SIZES.radius, justifyContent: 'center' }} testID={homeScreen.verticalProductList}>
                     <Text style={{ color: COLORS.black, ...FONTS.product_title_text }}>{item.name}</Text>
                     <Text style={{ ...FONTS.prod_list_price_text }}>{item.price}</Text>
                     <Text style={{ ...FONTS.prod_list_offer_title_text }}> 30% Off</Text>
@@ -232,12 +232,13 @@ const Home = () => {
 
     return (
         <View>
-            <ScrollView>
+            <ScrollView testID={homeScreen.scroll}>
                 <View style={styles.container} testID={homeScreen.container}>
                     {/* <Text style={{ marginTop: SIZES.radius, marginHorizontal: SIZES.padding, ...FONTS.largeTitleBold }}>TRENDING</Text> */}
 
                     <View style={{ height: 260, marginTop: 5, backgroundColor: COLORS.white }}>
-                        <FlatList
+                        <FlatList 
+                            testID={homeScreen.trendingShoesList}
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             data={trending}
@@ -248,6 +249,7 @@ const Home = () => {
 
                     <View style={{ height: 260, marginTop: 2, backgroundColor: COLORS.light1 }}>
                         <FlatList
+                            testID={homeScreen.latestClothesList}
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             data={trendingClothes}
@@ -278,6 +280,7 @@ const Home = () => {
                 </View> */}
                         <View style={{ flex: 1, paddingBottom: SIZES.padding }}>
                             <FlatList
+                                testID={homeScreen.recentlyVievewList}
                                 showsVerticalScrollIndicator={false}
                                 data={recentlyViewed}
                                 keyExtractor={item => item.id.toString()}

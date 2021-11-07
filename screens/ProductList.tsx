@@ -12,6 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 import { COLORS, FONTS, icons } from '../constants';
 import { ProductsDummyData } from '../src/data';
 import { ProductType } from '../src/types/DataTypes';
+import { productListScreen } from '../e2e/locators/productListScreen';
 
 const ProductList: React.FC = () => {
   const navigation = useNavigation()
@@ -25,7 +26,7 @@ const ProductList: React.FC = () => {
           height: 300,
           width: '50%',
         }}>
-        <TouchableOpacity
+        <TouchableOpacity testID={productListScreen.productListItem}
           onPress={() => {
             console.log('pressed on category');
             navigation.navigate('Product', {
@@ -109,13 +110,12 @@ const ProductList: React.FC = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID={productListScreen.productList}>
       <FlatList
         data={product_list}
         numColumns={2}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item, index }) => renderProductList(item, index)}
-        testID="product-list-item"
       />
     </View>
   );

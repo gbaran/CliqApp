@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput, Alert } from "react-native";
 import {COLORS, SIZES, FONTS} from '../../constants';
 import {ScrollView} from 'react-native-gesture-handler';
+import { loginScreen } from "../../e2e/locators/loginScreen";
 
 
 const Login = ({navigation}) => {
@@ -31,7 +32,7 @@ const Login = ({navigation}) => {
       onAlertTriggered(JSON.stringify(formState))
   }
   return(
-    <View  style={styles.container}>
+    <View  style={styles.container} testID={loginScreen.loginContainer}>
       <View style={styles.sub_container}>
         <ScrollView>
           <Text style={{...FONTS.checkout_btn_text, fontWeight:'bold', marginLeft:6}}>Welcome to Cliq App</Text>

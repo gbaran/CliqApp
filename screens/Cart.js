@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import {COLORS, SIZES, FONTS, icons} from '../constants';
 import {ScrollView} from 'react-native-gesture-handler';
+import { cartScreen } from '../e2e/locators/cartScreen';
 
 const Cart = ({route, navigate}) => {
   var {id, name, img, type, price} = route.params;
@@ -16,7 +17,7 @@ const Cart = ({route, navigate}) => {
   const discount_value = Math.round(price / 40);
   const discounted_price = Math.round(price - discount_value);
   return (
-    <View
+    <View testID={cartScreen.cartContainer}
       style={{height: '100%', width: '100%', backgroundColor: COLORS.light1}}>
       <ScrollView>
         <View
