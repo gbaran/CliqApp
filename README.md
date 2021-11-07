@@ -50,3 +50,17 @@ https://youtu.be/CDdwa1N_NAg
 
 
 *This app has a lot of similarties with Tata Cliq App and sample data collected for educational purposes only.
+
+## Detox tests
+
+### Running e2e tests
+
+Before running detox test you need to prepare a build for it using this command (for Android, for iOS just use different config):
+```
+detox build -c android.emu.debug
+```
+
+Then you can start test run with this command:
+```
+detox test -c android.emu.debug
+```
