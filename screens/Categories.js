@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {COLORS, SIZES, FONTS, icons} from '../constants';
+import { categoriesScreen } from '../e2e/locators/categoriesScreen';
 import ProductList from './ProductList';
 
 const Category = ({navigation}) => {
@@ -58,7 +59,7 @@ const Category = ({navigation}) => {
           navigation.navigate('ProductList', {});
         }}>
         <View
-          style={{
+            style={{
             height: 20,
             padding: 20,
             margin: 6,
@@ -86,7 +87,7 @@ const Category = ({navigation}) => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID={categoriesScreen.categoriesList}>
       <FlatList
         data={category_list}
         keyExtractor={item => item.id.toString()}

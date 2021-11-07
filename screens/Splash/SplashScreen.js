@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import {FONTS} from '../../constants/theme';
 import {icons} from '../../constants/';
+import { launchScreen } from '../../e2e/locators/launchScreen';
 
 class Splashscreen extends React.Component {
   constructor(props) {
@@ -16,8 +17,8 @@ class Splashscreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground source={icons.launcher_image} style={styles.image}>
-          <Image
+        <ImageBackground source={icons.launcher_image} style={styles.image} testID={launchScreen.launcherImage}>
+          <Image testID={launchScreen.launcherBottomIcon}
             source={icons.launcher_icon}
             style={{
               justifyContent: 'center',

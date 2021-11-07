@@ -13,6 +13,7 @@ import Category from '../screens/Categories';
 import Product from '../screens/Detail';
 import ProductList from '../screens/ProductList';
 import Splashscreen from '../screens/Splash/SplashScreen';
+import { homeScreen } from '../e2e/locators/homeScreen';
 
 const Stack = createStackNavigator<HomeStackParamList>()
 const Tab = createBottomTabNavigator<HomeBottmTabParamList>()
@@ -105,7 +106,7 @@ export default function HomeNavigator() {
                         <TouchableOpacity
                             style={{ marginLeft: SIZES.padding }}
                             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                            <Image
+                            <Image testID={homeScreen.menuButton}
                                 source={icons.menu}
                                 resizeMode="contain"
                                 style={{

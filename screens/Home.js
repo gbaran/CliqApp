@@ -18,6 +18,7 @@ import { COLORS, FONTS, SIZES } from '../constants';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import { ClothesContext } from '../src/context';
+import { homeScreen } from '../e2e/locators/homeScreen';
 
 const Home = () => {
 
@@ -232,7 +233,7 @@ const Home = () => {
     return (
         <View>
             <ScrollView>
-                <View style={styles.container}>
+                <View style={styles.container} testID={homeScreen.container}>
                     {/* <Text style={{ marginTop: SIZES.radius, marginHorizontal: SIZES.padding, ...FONTS.largeTitleBold }}>TRENDING</Text> */}
 
                     <View style={{ height: 260, marginTop: 5, backgroundColor: COLORS.white }}>

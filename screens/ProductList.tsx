@@ -115,6 +115,7 @@ const ProductList: React.FC = () => {
         numColumns={2}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item, index }) => renderProductList(item, index)}
+        testID="product-list-item"
       />
     </View>
   );

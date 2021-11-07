@@ -1,4 +1,10 @@
-describe('Example', () => {
+import { categoriesScreenElements } from "./elements/categoriesScreenElements";
+import { homeScreenElements } from "./elements/homeScreenElements";
+import { launchScreenElements } from "./elements/launchScreenElements";
+import { sideMenuElements } from "./elements/sideMenuElements";
+import { waitForHomeScreenToLoad } from "./helpers/waits";
+
+describe('Sample CliqApp e2e tests', () => {
   beforeAll(async () => {
     await device.launchApp();
   });
@@ -7,17 +13,21 @@ describe('Example', () => {
     await device.reloadReactNative();
   });
 
-  it('should have welcome screen', async () => {
-    await expect(element(by.id('welcome'))).toBeVisible();
+  it.skip('displays launch screen', async () => {
+    await expect(launchScreenElements.bottomIcon()).toBeVisible();
+    await expect(launchScreenElements.image()).toBeVisible();
   });
 
-  it('should show hello screen after tap', async () => {
-    await element(by.id('hello_button')).tap();
-    await expect(element(by.text('Hello!!!'))).toBeVisible();
-  });
+  it('changes category', async () => {
+    // application takes some time to load home screen
+    // added additional wait to avoid failures
+    await waitForHomeScreenToLoad()
+    
+    await homeScreenElements.menuButton().tap();
+    await sideMenuElements.categoriesButton().tap()
 
-  it('should show world screen after tap', async () => {
-    await element(by.id('world_button')).tap();
-    await expect(element(by.text('World!!!'))).toBeVisible();
+    await expect(categoriesScreenElements.categoriesList()).toBeVisible();
+    await categoriesScreenElements.beautyCategory().tap();
+  
   });
 });

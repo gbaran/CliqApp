@@ -243,3 +243,4 @@ website/package-lock.json
 
 # detox artifacts
 artifacts/
+*.hprof
