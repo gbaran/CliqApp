@@ -1,3 +1,5 @@
 export const cartScreen = {
-    cartContainer: 'cart-container'
+    cartContainerId: 'cart-container',
+    productDescriptionId: 'cart-product-description',
+    productPriceId: 'cart-product-price'
 }

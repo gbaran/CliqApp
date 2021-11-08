@@ -17,7 +17,7 @@ const Cart = ({route, navigate}) => {
   const discount_value = Math.round(price / 40);
   const discounted_price = Math.round(price - discount_value);
   return (
-    <View testID={cartScreen.cartContainer}
+    <View testID={cartScreen.cartContainerId}
       style={{height: '100%', width: '100%', backgroundColor: COLORS.light1}}>
       <ScrollView>
         <View
@@ -36,10 +36,10 @@ const Cart = ({route, navigate}) => {
               justifyContent: 'flex-end',
             }}>
             <View style={{flex: 2, justifyContent: 'space-evenly'}}>
-              <Text style={{...FONTS.product_title_text, paddingBottom: 10}}>
+              <Text style={{...FONTS.product_title_text, paddingBottom: 10}} testID={cartScreen.productDescriptionId}>
                 {name}
               </Text>
-              <Text style={{...FONTS.product_title_text, paddingBottom: 10}}>
+              <Text style={{...FONTS.product_title_text, paddingBottom: 10}} testID={cartScreen.productPriceId}>
                 ₹{price}
               </Text>
               <Text

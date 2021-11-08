@@ -32,7 +32,7 @@ const Login = ({navigation}) => {
       onAlertTriggered(JSON.stringify(formState))
   }
   return(
-    <View  style={styles.container} testID={loginScreen.loginContainer}>
+    <View  style={styles.container} testID={loginScreen.loginContainerId}>
       <View style={styles.sub_container}>
         <ScrollView>
           <Text style={{...FONTS.checkout_btn_text, fontWeight:'bold', marginLeft:6}}>Welcome to Cliq App</Text>
@@ -41,40 +41,43 @@ const Login = ({navigation}) => {
             <View style={{flexDirection:'row'}}>
               <Text style={{justifyContent:'center',padding:6,
                 margin:2, alignContent:'center', alignSelf:'center'}}>+91</Text>
-              <TextInput placeholder={'Mobile Number*'}
+              <TextInput 
+                         testID={loginScreen.mobileNumberInputFieldId}
+                         placeholder={'Mobile Number*'}
                          keyboardType={"numeric"}
                          maxLength={12}
                          returnKeyType={"done"}
                          onChangeText={phone => onHandleChange("phone_number", phone)}
-                         style={styles.input_box} placeholderTextColor={'#212121'}></TextInput>
+                         style={styles.input_box} placeholderTextColor={'#212121'}>
+                         </TextInput>
             </View>
           </View>
 
           <Text style={{...FONTS.home_btm_text, marginLeft:6, marginTop:10}}>Please enter OTP received on your mobile number</Text>
-          <View style={{flexDirection:'row'}}>
+          <View style={{flexDirection:'row'}} testID={loginScreen.otpNumberFieldId}>
             <View style={styles.input_otp_container}>
-              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"}></TextInput>
+              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"} testID={loginScreen.firstOtpNumberFieldId}></TextInput>
             </View>
             <View style={styles.input_otp_container}>
-              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"}></TextInput>
+              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"} testID={loginScreen.secondOtpNumberFieldId}></TextInput>
             </View>
             <View style={styles.input_otp_container}>
-              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"}></TextInput>
+              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"} testID={loginScreen.thirdOtpNumberFieldId}></TextInput>
             </View>
             <View style={styles.input_otp_container}>
-              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"}></TextInput>
+              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"} testID={loginScreen.fourthOtpNumberFieldId}></TextInput>
             </View>
             <View style={styles.input_otp_container}>
-              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"}></TextInput>
+              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"} testID={loginScreen.fifthOtpNumberFieldId}></TextInput>
             </View>
             <View style={styles.input_otp_container}>
-              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"}></TextInput>
+              <TextInput numberOfLines={1} maxLength={1} keyboardType={"numeric"} testID={loginScreen.sixthOtpNumberFieldId}></TextInput>
             </View>
           </View>
-          <Text style={{...FONTS.big_button_text, marginLeft:0,alignSelf:'center', color:'#0077b6'}}>Resend OTP</Text>
+          <Text style={{...FONTS.big_button_text, marginLeft:0,alignSelf:'center', color:'#0077b6'}} testID={loginScreen.resentOtpButtonId}>Resend OTP</Text>
         </ScrollView>
       </View>
-      <View style={styles.submit_btn_container}>
+      <View style={styles.submit_btn_container} testID={loginScreen.continueButtonId}>
         <TouchableOpacity onPress={onSubmit}>
           <Text style={styles.submit_box}>
             Continue

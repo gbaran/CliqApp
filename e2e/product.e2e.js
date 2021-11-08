@@ -1,25 +1,20 @@
-import { cartScreenElements } from "./elements/cartScreenElements";
-import { categoriesScreenElements } from "./elements/categoriesScreenElements";
-import { homeScreenElements } from "./elements/homeScreenElements";
-import { launchScreenElements } from "./elements/launchScreenElements";
-import { productListScreenElements } from "./elements/productListScreenElements";
-import { productScreenElements } from "./elements/productScreenElements";
-import { sideMenuElements } from "./elements/sideMenuElements";
-import { waitForHomeScreenToLoad } from "./helpers/waits";
+import { cartScreenElements } from "./elements/cartScreenElements"
+import { categoriesScreenElements } from "./elements/categoriesScreenElements"
+import { homeScreenElements } from "./elements/homeScreenElements"
+import { launchScreenElements } from "./elements/launchScreenElements"
+import { productListScreenElements } from "./elements/productListScreenElements"
+import { productScreenElements } from "./elements/productScreenElements"
+import { sideMenuElements } from "./elements/sideMenuElements"
+import { waitForHomeScreenToLoad } from "./helpers/waits"
 
 describe('Sample CliqApp e2e tests', () => {
   beforeAll(async () => {
-    await device.launchApp();
-  });
+    await device.launchApp()
+  })
 
   beforeEach(async () => {
-    await device.reloadReactNative();
-  });
-
-  it.skip('displays launch screen', async () => {
-    await expect(launchScreenElements.bottomIcon()).toBeVisible();
-    await expect(launchScreenElements.image()).toBeVisible();
-  });
+    await device.reloadReactNative()
+  })
 
   it('changes category', async () => {
     // application takes some time to load home screen
@@ -27,36 +22,33 @@ describe('Sample CliqApp e2e tests', () => {
     await waitForHomeScreenToLoad()
     
     // navigate to categories list
-    await homeScreenElements.menuButton().tap();
+    await homeScreenElements.menuButton().tap()
     await sideMenuElements.categoriesButton().tap()
 
     // choose beauty category
-    await expect(categoriesScreenElements.categoriesList()).toBeVisible();
-    await categoriesScreenElements.beautyCategory().tap();
+    await expect(categoriesScreenElements.categoriesList()).toBeVisible()
+    await categoriesScreenElements.beautyCategory().tap()
   
     // validate if product list is displayed
-    await expect(productListScreenElements.productList()).toBeVisible();
-  });
+    await expect(productListScreenElements.productList()).toBeVisible()
+  })
 
   it('validates product card', async () => {
     await waitForHomeScreenToLoad()
 
-    // navigate to products list
-    await homeScreenElements.menuButton().tap();
-    await sideMenuElements.productsButton().tap();
-
-    // choose product from list
-    await expect(productListScreenElements.productList()).toBeVisible();
-    await productListScreenElements.productListItem().atIndex(1).tap()
+    // choose product from vertical list
+    await homeScreenElements.scroll().scroll(100, 'down')
+    await homeScreenElements.verticalProductList().atIndex(0).tap()
+    await expect(productScreenElements.productContainer()).toBeVisible()
 
     // validate if product card elements are displayed
-    await expect(productScreenElements.productContainer()).toBeVisible();
-    await expect(productScreenElements.productDescription()).toBeVisible();
-    await expect(productScreenElements.productDiscount()).toBeVisible();
-    await expect(productScreenElements.productImage()).toBeVisible();
-    await expect(productScreenElements.productName()).toBeVisible();
-    await expect(productScreenElements.addToBagButton()).toBeVisible();
-    await expect(productScreenElements.buyNowButton()).toBeVisible();
+    await expect(productScreenElements.productContainer()).toBeVisible()
+    await expect(productScreenElements.productDescription()).toBeVisible()
+    await expect(productScreenElements.productDiscount()).toBeVisible()
+    await expect(productScreenElements.productImage()).toBeVisible()
+    await expect(productScreenElements.productName()).toBeVisible()
+    await expect(productScreenElements.addToBagButton()).toBeVisible()
+    await expect(productScreenElements.buyNowButton()).toBeVisible()
   })
 
   it('adds product to bag', async () => {
@@ -65,11 +57,11 @@ describe('Sample CliqApp e2e tests', () => {
     // choose product from vertical list
     await homeScreenElements.scroll().scroll(100, 'down')
     await homeScreenElements.verticalProductList().atIndex(0).tap()
-    await expect(productScreenElements.productContainer()).toBeVisible();
+    await expect(productScreenElements.productContainer()).toBeVisible()
 
     // add product to bag
-    await productScreenElements.addToBagButton().tap();
-    await expect(cartScreenElements.cartContainer()).toBeVisible();
+    await productScreenElements.addToBagButton().tap()
+    await expect(cartScreenElements.cartContainer()).toBeVisible()
   })
   
   it('uses buy now product', async () => {
@@ -78,10 +70,10 @@ describe('Sample CliqApp e2e tests', () => {
     //choose product from vertical list
     await homeScreenElements.scroll().scroll(100, 'down')
     await homeScreenElements.verticalProductList().atIndex(0).tap()
-    await expect(productScreenElements.productContainer()).toBeVisible();
+    await expect(productScreenElements.productContainer()).toBeVisible()
 
     // use buy now
-    await productScreenElements.buyNowButton().tap();
-    await expect(cartScreenElements.cartContainer()).toBeVisible();
+    await productScreenElements.buyNowButton().tap()
+    await expect(cartScreenElements.cartContainer()).toBeVisible()
   })
-});
+})
