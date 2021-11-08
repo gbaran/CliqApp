@@ -15,10 +15,10 @@ const Product = ({route, navigation}) => {
   }
 
   return (
-    <View style={{height: '100%', width: '100%', backgroundColor: '#fafafa'}} testID={productScreen.productContainer}>
+    <View style={{height: '100%', width: '100%', backgroundColor: '#fafafa'}} testID={productScreen.productContainerId}>
       <ScrollView>
         <View style={{height: 500, padding: 2}}>
-          <Image testID={productScreen.productImage}
+          <Image testID={productScreen.productImageId}
             source={{uri: img}}
             resizeMode="contain"
             style={{
@@ -48,10 +48,10 @@ const Product = ({route, navigation}) => {
             margin: 10,
           }}>
           <View style={{flex: 1, alignItems: 'flex-start'}}>
-            <Text style={{...FONTS.product_title_text}} testID={productScreen.productName}>{name}</Text>
+            <Text style={{...FONTS.product_title_text}} testID={productScreen.productNameId}>{name}</Text>
           </View>
           <View style={{flex: 1, alignItems: 'flex-end'}}>
-            <Text style={{...FONTS.product_title_text}} testID={productScreen.productPrice}>₹{price}</Text>
+            <Text style={{...FONTS.product_title_text}} testID={productScreen.productPriceId}>₹{price}</Text>
           </View>
         </View>
         <View
@@ -62,12 +62,12 @@ const Product = ({route, navigation}) => {
             margin: 10,
           }}>
           <View style={{flex: 1, alignItems: 'flex-start'}}>
-            <Text style={{...FONTS.product_sub_title_text}} testID={productScreen.productDescription}>
+            <Text style={{...FONTS.product_sub_title_text}} testID={productScreen.productDescriptionId}>
               short description
             </Text>
           </View>
           <View style={{flex: 1, alignItems: 'flex-end'}}>
-            <Text style={{...FONTS.product_sub_title_text}} testID={productScreen.productDiscount}>(40%)</Text>
+            <Text style={{...FONTS.product_sub_title_text}} testID={productScreen.productDiscountId}>(40%)</Text>
           </View>
         </View>
       </ScrollView>
@@ -102,7 +102,7 @@ const Product = ({route, navigation}) => {
                 price: price,
               });
             }}>
-            <Text style={{color: COLORS.black, ...FONTS.big_button_text}} testID={productScreen.addToBagButton}>
+            <Text style={{color: COLORS.black, ...FONTS.big_button_text}} testID={productScreen.addToBagButtonId}>
               ADD TO BAG
             </Text>
           </TouchableOpacity>
@@ -125,7 +125,7 @@ const Product = ({route, navigation}) => {
                 price: price,
               });
             }}>
-            <Text style={{color: COLORS.white, ...FONTS.big_button_text}} testID={productScreen.buyNowButton}>
+            <Text style={{color: COLORS.white, ...FONTS.big_button_text}} testID={productScreen.buyNowButtonId}>
               BUY NOW
             </Text>
           </TouchableOpacity>

@@ -1,9 +1,9 @@
 export const homeScreen = {
-    container: 'home-screen-container',
-    trendingShoesList: 'trending-shoes-list',
-    menuButton: 'menu-icon',
-    scroll: 'scroll',
-    latestClothesList: 'latest-clothes-list',
-    recentlyVievewList: 'recently-vievew-list',
-    verticalProductList: 'vertical-product-list'
+    containerId: 'home-screen-container',
+    trendingShoesListId: 'trending-shoes-list',
+    menuButtonId: 'menu-icon',
+    scrollId: 'scroll',
+    latestClothesListId: 'latest-clothes-list',
+    recentlyVievewListId: 'recently-vievew-list',
+    verticalProductListId: 'vertical-product-list'
 }

@@ -26,7 +26,7 @@ const ProductList: React.FC = () => {
           height: 300,
           width: '50%',
         }}>
-        <TouchableOpacity testID={productListScreen.productListItem}
+        <TouchableOpacity testID={productListScreen.productListItemId}
           onPress={() => {
             console.log('pressed on category');
             navigation.navigate('Product', {
@@ -110,7 +110,7 @@ const ProductList: React.FC = () => {
   }
 
   return (
-    <View style={styles.container} testID={productListScreen.productList}>
+    <View style={styles.container} testID={productListScreen.productListId}>
       <FlatList
         data={product_list}
         numColumns={2}

@@ -1,4 +1,4 @@
 export const categoriesScreen = {
-    beautyCategoryButton: 'Beauty',
-    categoriesList: 'categories-list'
+    beautyCategoryButtonId: 'Beauty',
+    categoriesListId: 'categories-list'
 }

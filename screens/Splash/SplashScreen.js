@@ -17,8 +17,8 @@ class Splashscreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground source={icons.launcher_image} style={styles.image} testID={launchScreen.launcherImage}>
-          <Image testID={launchScreen.launcherBottomIcon}
+        <ImageBackground source={icons.launcher_image} style={styles.image} testID={launchScreen.launcherImageId}>
+          <Image testID={launchScreen.launcherBottomIconId}
             source={icons.launcher_icon}
             style={{
               justifyContent: 'center',

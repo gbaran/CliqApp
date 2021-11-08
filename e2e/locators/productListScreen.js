@@ -1,4 +1,4 @@
 export const productListScreen = {
-    productList: 'product-list',
-    productListItem: 'product-list-item'
+    productListId: 'product-list',
+    productListItemId: 'product-list-item'
 }

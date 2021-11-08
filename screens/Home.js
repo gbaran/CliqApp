@@ -192,7 +192,7 @@ const Home = () => {
                         }}
                     />
                 </View>
-                <View style={{ flex: 3, marginLeft: SIZES.radius, justifyContent: 'center' }} testID={homeScreen.verticalProductList}>
+                <View style={{ flex: 3, marginLeft: SIZES.radius, justifyContent: 'center' }} testID={homeScreen.verticalProductListId}>
                     <Text style={{ color: COLORS.black, ...FONTS.product_title_text }}>{item.name}</Text>
                     <Text style={{ ...FONTS.prod_list_price_text }}>{item.price}</Text>
                     <Text style={{ ...FONTS.prod_list_offer_title_text }}> 30% Off</Text>
@@ -232,13 +232,13 @@ const Home = () => {
 
     return (
         <View>
-            <ScrollView testID={homeScreen.scroll}>
-                <View style={styles.container} testID={homeScreen.container}>
+            <ScrollView testID={homeScreen.scrollId}>
+                <View style={styles.container} testID={homeScreen.containerId}>
                     {/* <Text style={{ marginTop: SIZES.radius, marginHorizontal: SIZES.padding, ...FONTS.largeTitleBold }}>TRENDING</Text> */}
 
                     <View style={{ height: 260, marginTop: 5, backgroundColor: COLORS.white }}>
                         <FlatList 
-                            testID={homeScreen.trendingShoesList}
+                            testID={homeScreen.trendingShoesListId}
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             data={trending}
@@ -249,7 +249,7 @@ const Home = () => {
 
                     <View style={{ height: 260, marginTop: 2, backgroundColor: COLORS.light1 }}>
                         <FlatList
-                            testID={homeScreen.latestClothesList}
+                            testID={homeScreen.latestClothesListId}
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             data={trendingClothes}
@@ -280,7 +280,7 @@ const Home = () => {
                 </View> */}
                         <View style={{ flex: 1, paddingBottom: SIZES.padding }}>
                             <FlatList
-                                testID={homeScreen.recentlyVievewList}
+                                testID={homeScreen.recentlyVievewListId}
                                 showsVerticalScrollIndicator={false}
                                 data={recentlyViewed}
                                 keyExtractor={item => item.id.toString()}

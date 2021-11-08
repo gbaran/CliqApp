@@ -2,10 +2,10 @@ import { getById } from "../helpers/getters";
 import { homeScreen } from "../locators/homeScreen";
 
 export const homeScreenElements = {
-    latestClothesList: getById(homeScreen.latestClothesList),
-    menuButton: getById(homeScreen.menuButton),
-    recentlyVievewList: getById(homeScreen.recentlyVievewList),
-    scroll: getById(homeScreen.scroll),
-    trendingShoesList: getById(homeScreen.trendingShoesList),
-    verticalProductList: getById(homeScreen.verticalProductList)
+    latestClothesList: getById(homeScreen.latestClothesListId),
+    menuButton: getById(homeScreen.menuButtonId),
+    recentlyVievewList: getById(homeScreen.recentlyVievewListId),
+    scroll: getById(homeScreen.scrollId),
+    trendingShoesList: getById(homeScreen.trendingShoesListId),
+    verticalProductList: getById(homeScreen.verticalProductListId)
 } 

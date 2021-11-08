@@ -1,4 +1,4 @@
 export const launchScreen = {
-    launcherBottomIcon: 'launcher-bottom-icon',
-    launcherImage: 'launcher-image'
+    launcherBottomIconId: 'launcher-bottom-icon',
+    launcherImageId: 'launcher-image'
 }

@@ -1,10 +1,10 @@
 export const productScreen = {
-    addToBagButton: 'add-to-bag',
-    buyNowButton: 'buy-now',
-    productContainer: 'product-container',
-    productDescription: 'product-description',
-    productDiscount: 'product-discount',
-    productImage: 'product-image',
-    productName: 'product-name',
-    productPrice: 'product-price'
+    addToBagButtonId: 'add-to-bag',
+    buyNowButtonId: 'buy-now',
+    productContainerId: 'product-container',
+    productDescriptionId: 'product-description',
+    productDiscountId: 'product-discount',
+    productImageId: 'product-image',
+    productNameId: 'product-name',
+    productPriceId: 'product-price'
 }

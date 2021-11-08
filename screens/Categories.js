@@ -87,7 +87,7 @@ const Category = ({navigation}) => {
   }
 
   return (
-    <View style={styles.container} testID={categoriesScreen.categoriesList}>
+    <View style={styles.container} testID={categoriesScreen.categoriesListId}>
       <FlatList
         data={category_list}
         keyExtractor={item => item.id.toString()}

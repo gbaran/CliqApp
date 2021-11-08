@@ -106,7 +106,7 @@ export default function HomeNavigator() {
                         <TouchableOpacity
                             style={{ marginLeft: SIZES.padding }}
                             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                            <Image testID={homeScreen.menuButton}
+                            <Image testID={homeScreen.menuButtonId}
                                 source={icons.menu}
                                 resizeMode="contain"
                                 style={{

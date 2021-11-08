@@ -1,5 +1,5 @@
 export const sideMenu = {
-    categoriesButton: 'Categories',
-    productsButton: 'Products',
-    loginButton: 'Login'
+    categoriesButtonId: 'Categories',
+    productsButtonId: 'Products',
+    loginButtonId: 'Login'
 }
